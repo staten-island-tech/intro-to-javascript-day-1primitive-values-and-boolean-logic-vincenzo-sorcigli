@@ -129,3 +129,168 @@ else if (73 <= temperature && temperature <= 76){
 else{
     console.log("It's too hot!")
 }  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// -----
+// Day 2
+// -----
+
+// Functions notes
+
+/* function test(){
+    console.log("this is a test");
+}
+test();
+
+function functionWithArgument(argument){
+    console.log(argument);
+}
+functionWithArgument("i filled in something for the argument so now something is showing");
+
+function add(x, y){
+    return x + y;
+    //some code here that won't run
+    //return immediately ends the function
+}
+console.log(add(2, 7));
+
+//you can make variables functions
+let z = function add(x, y){
+    return x + y;
+    //some code here that won't run
+    //return immediately ends the function
+}
+console.log(z(1,11)); */
+
+
+
+
+//scoping and closures notes
+
+//Let vs. const
+let x = "x" //value is able to be changed
+const y = "y" //value is NOT able to be changed. 
+//we use const 99% of the time
+
+/* //abstractions
+const hello = function(){
+    alert("hello");
+}
+const bye = function(){
+    alert("bye");
+}
+function beatles(){
+    hello();
+    bye();
+}
+beatles(); */
+//making code smaller by making things functions
+
+//scoping
+//-------
+/* //global scope
+function makeFunc(){
+    //function scope
+    const name = "Michelle";
+    console.log(name);
+}
+function hello(){
+    const name = "Rhianna";
+    console.log(name);
+}
+hello();
+makeFunc(); */
+//the same variable name can exist in multiple functions
+
+//closures notes
+//inside a function, nothing can be impacted by the global scope
+//inner functions still have access to the variables in its outer function
+
+/* function makeFunc(){
+    //function scope
+    const name = "Michelle";
+    function displayName(){ //we cannot call functions inside function directly
+        alert(name); //still has to access variable name
+    }
+    return displayName; //returning the inner function
+}
+const myFunc = makeFunc();
+myFunc(); */
+
+
+
+
+
+//Arrays notes
+/* const names = ["Michelle","Rhianna","Vincenzo","Mia","Jolie"]; //"Michelle" is item 0. Arrays in javascript start at 0.
+names.push("Brady"); // you can add to arrays. push is an "array method"
+// MDN has access to all array methods */
+
+
+
+
+
+// Arrow functions notes
+/* const names = ["Michelle","Rhianna","Vincenzo","Mia","Jolie"];
+names.forEach(name => console.log(name));
+// two key differences: 
+// 1. always returned
+// 2. "this" is changed */
+
+
+
+
+
+// Spread operator notes
+/* const numbers = [1, 2, 3];
+const add = function(x, y, z){
+    return x + y + z;
+}
+console.log(add(...numbers));
+
+const numbersAgain = [10, 13, 1, 78, 1000];
+const biggestNum = Math.max(...numbersAgain);
+console.log(biggestNum); */
+
+
+
+
+
+//Challenges
+
+let names = ["Riya", "Omor", "Alan", "Jaiyu", "Michael", "Lisa", "Richard"];
+
+// Challenge 1
+//filter names whose length is less than 5
+const noShortNames = names.filter(name => name.length >= 5);
+console.log(noShortNames);
+
+// Challenge 2
+// 1. does it include "Junshen"?
+// 2. check for "Allen" OR "Saava" - use "some"
+
+const checkForName = function(name){
+    return names.includes(name);
+}
+console.log(checkForName("Junshen"));
+
+const coolFunction = function(name1,name2){
+    return names.some(name1,name2);
+}
+console.log(coolFunction("Saava","Alan"));
